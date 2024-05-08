@@ -29,6 +29,8 @@ const handleClick = () => {
 
 <style scoped lang="scss">
 .landing-section {
+  position: relative;
+  z-index: 3;
   display: flex;
   height: 100vh;
   background-color: var(--br-color-yellow);

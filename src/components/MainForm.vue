@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import UiInput from '../components/general/UiInput.vue'
+import ContentPanel from './ContentPanel.vue'
 
 interface IProps {
   isContentExpanded: boolean
@@ -72,11 +73,14 @@ const handleSubmit = () => {
       <button class="button cancel">CANCEL</button>
       <button class="button save">SAVE</button>
     </form>
+    <ContentPanel :isContentExpanded="isContentExpanded" />
   </section>
 </template>
 
 <style scoped lang="scss">
 .form-section {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   background-color: #fff;

@@ -8,6 +8,12 @@ let isContentExpanded = ref(false)
 
 const handleContentExpand = () => {
   isContentExpanded.value = !isContentExpanded.value
+
+  if (isContentExpanded.value)
+    window.scrollTo({
+      behavior: 'smooth',
+      top: window.innerHeight
+    })
 }
 </script>
 
