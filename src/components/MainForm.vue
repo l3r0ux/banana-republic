@@ -21,6 +21,19 @@ const formValue = {
 const handleSubmit = () => {
   console.log(formValue)
 }
+
+const clearForm = () => {
+  formValue.name = null
+  formValue.gender = 'Male'
+  formValue.dateOfBirth = null
+  formValue.email = null
+  formValue.mobile = null
+  formValue.customerId = null
+  formValue.membership = 'Classic'
+
+  const form: HTMLFormElement | null = document.querySelector('.form')
+  form?.reset()
+}
 </script>
 
 <template>
@@ -70,8 +83,8 @@ const handleSubmit = () => {
           { name: 'Gold', iconUrl: '/card' }
         ]"
       />
-      <button class="button cancel">CANCEL</button>
-      <button class="button save">SAVE</button>
+      <button @click.prevent="clearForm" class="button cancel">CANCEL</button>
+      <button type="submit" class="button save">SAVE</button>
     </form>
     <ContentPanel :isContentExpanded="isContentExpanded" />
   </section>
