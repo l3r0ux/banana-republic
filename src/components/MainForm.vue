@@ -10,22 +10,22 @@ interface IProps {
 defineProps<IProps>()
 
 let formValue = reactive({
-  name: null,
+  name: '',
   gender: 'Male',
-  dateOfBirth: null,
-  email: null,
-  mobile: null,
-  customerId: null,
+  dateOfBirth: '',
+  email: '',
+  mobile: '',
+  customerId: '',
   membership: 'Classic'
 })
 
 const clearForm = () => {
-  formValue.name = null
+  formValue.name = ''
   formValue.gender = 'Male'
-  formValue.dateOfBirth = null
-  formValue.email = null
-  formValue.mobile = null
-  formValue.customerId = null
+  formValue.dateOfBirth = ''
+  formValue.email = ''
+  formValue.mobile = ''
+  formValue.customerId = ''
   formValue.membership = 'Classic'
 }
 
