@@ -19,12 +19,8 @@ const handleClick = () => {
       <div class="text">
         <h1>Front-end challenge!</h1>
         <p>This is the design that you will need to code up and impress us.</p>
-        <button>
-          <img
-            @click="handleClick"
-            src="/arrow.svg"
-            :class="isContentExpanded ? 'expanded' : 'closed'"
-          />
+        <button @click="handleClick">
+          <img src="/arrow.svg" :class="isContentExpanded ? 'expanded' : 'closed'" />
         </button>
       </div>
     </div>
@@ -67,6 +63,7 @@ const handleClick = () => {
       }
 
       button {
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;

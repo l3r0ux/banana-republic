@@ -36,8 +36,8 @@ const handleSubmit = () => {
         label="Gender"
         type="chip"
         :chips="[
-          { name: 'Male', iconUrl: '/mars-symbol.svg' },
-          { name: 'Female', iconUrl: '/venus-symbol.svg' }
+          { name: 'Male', iconUrl: '/mars-symbol' },
+          { name: 'Female', iconUrl: '/venus-symbol' }
         ]"
       />
       <UiInput @change="formValue.dateOfBirth = $event" label="Date of Birth" type="date" />
@@ -50,7 +50,7 @@ const handleSubmit = () => {
       <UiInput
         @change="formValue.mobile = $event"
         label="Mobile"
-        type="number"
+        type="tel"
         placeholder="+91 98765 43210"
       />
       <UiInput
@@ -64,9 +64,9 @@ const handleSubmit = () => {
         label="Membership"
         type="chip"
         :chips="[
-          { name: 'Classic', iconUrl: '/card.svg' },
-          { name: 'Silver', iconUrl: '/card.svg' },
-          { name: 'Gold', iconUrl: '/card.svg' }
+          { name: 'Classic', iconUrl: '/card' },
+          { name: 'Silver', iconUrl: '/card' },
+          { name: 'Gold', iconUrl: '/card' }
         ]"
       />
       <button class="button cancel">CANCEL</button>
@@ -99,6 +99,7 @@ const handleSubmit = () => {
       font-size: 1.1rem;
       border-radius: 0.4rem;
       padding: 1rem 0;
+      cursor: pointer;
 
       &.cancel {
         margin-bottom: 0.5rem;

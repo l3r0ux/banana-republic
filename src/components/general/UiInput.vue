@@ -26,14 +26,16 @@ onMounted(() => {
 <template>
   <div class="input-container">
     <label :for="label">{{ label }}</label>
-    <input
-      v-if="type !== 'chip'"
-      @input="emit('change', $event.target.value)"
-      :id="label"
-      :type="type"
-      :placeholder="placeholder"
-      :name="label"
-    />
+    <div class="input-wrapper" v-if="type !== 'chip'">
+      <img v-if="type === 'date'" src="/calendar.svg" />
+      <input
+        @input="emit('change', $event.target.value)"
+        :id="label"
+        :type="type"
+        :placeholder="placeholder"
+        :name="label"
+      />
+    </div>
     <template v-else>
       <div class="chips-container">
         <button
@@ -43,7 +45,9 @@ onMounted(() => {
           :key="chip"
         >
           <div class="chip" :class="activeChip === chip.name ? 'selected' : ''">
-            <img :src="chip.iconUrl" />
+            <img
+              :src="activeChip === chip.name ? `${chip.iconUrl}--white.svg` : `${chip.iconUrl}.svg`"
+            />
           </div>
           <span class="name">{{ chip.name }}</span>
         </button>
@@ -61,6 +65,41 @@ onMounted(() => {
   width: 100%;
   text-align: left;
   margin-bottom: 1rem;
+
+  .input-wrapper {
+    position: relative;
+    width: 100%;
+
+    @supports selector(::-webkit-calendar-picker-indicator) {
+      input[type='date']::-webkit-calendar-picker-indicator {
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0;
+        z-index: 2;
+        width: 15%;
+        height: 100%;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      img {
+        position: absolute;
+        right: 18px;
+        top: 14px;
+        pointer-events: none;
+        background-color: var(--br-color-pale-grey);
+      }
+    }
+
+    @supports not selector(::-webkit-calendar-picker-indicator) {
+      img {
+        display: none;
+      }
+    }
+  }
 
   label,
   input {
@@ -104,6 +143,7 @@ onMounted(() => {
     margin-top: 0.6rem;
 
     .chip-container {
+      cursor: pointer;
       display: flex;
       align-items: center;
       border: unset;
