@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { reactive } from 'vue'
 import UiInput from '../components/general/UiInput.vue'
 import ContentPanel from './ContentPanel.vue'
 
@@ -8,7 +9,7 @@ interface IProps {
 
 defineProps<IProps>()
 
-const formValue = {
+let formValue = reactive({
   name: null,
   gender: 'Male',
   dateOfBirth: null,
@@ -16,11 +17,7 @@ const formValue = {
   mobile: null,
   customerId: null,
   membership: 'Classic'
-}
-
-const handleSubmit = () => {
-  console.log(formValue)
-}
+})
 
 const clearForm = () => {
   formValue.name = null
@@ -30,9 +27,10 @@ const clearForm = () => {
   formValue.mobile = null
   formValue.customerId = null
   formValue.membership = 'Classic'
+}
 
-  const form: HTMLFormElement | null = document.querySelector('.form')
-  form?.reset()
+const handleSubmit = () => {
+  console.log(formValue)
 }
 </script>
 
@@ -44,6 +42,7 @@ const clearForm = () => {
         label="Name"
         type="text"
         placeholder="Kendal Jenner"
+        :input-value="formValue.name"
       />
       <UiInput
         @change="formValue.gender = $event"
@@ -53,25 +52,34 @@ const clearForm = () => {
           { name: 'Male', iconUrl: '/mars-symbol' },
           { name: 'Female', iconUrl: '/venus-symbol' }
         ]"
+        :input-value="formValue.gender"
       />
-      <UiInput @change="formValue.dateOfBirth = $event" label="Date of Birth" type="date" />
+      <UiInput
+        @change="formValue.dateOfBirth = $event"
+        label="Date of Birth"
+        type="date"
+        :input-value="formValue.dateOfBirth"
+      />
       <UiInput
         @change="formValue.email = $event"
         label="Email"
         type="email"
         placeholder="kendall@email.com"
+        :input-value="formValue.email"
       />
       <UiInput
         @change="formValue.mobile = $event"
         label="Mobile"
         type="tel"
         placeholder="+91 98765 43210"
+        :input-value="formValue.mobile"
       />
       <UiInput
         @change="formValue.customerId = $event"
         label="Customer ID"
         type="text"
         placeholder="576802-ERD0348 45"
+        :input-value="formValue.customerId"
       />
       <UiInput
         @change="formValue.membership = $event"
@@ -82,6 +90,7 @@ const clearForm = () => {
           { name: 'Silver', iconUrl: '/card' },
           { name: 'Gold', iconUrl: '/card' }
         ]"
+        :input-value="formValue.membership"
       />
       <button @click.prevent="clearForm" class="button cancel">CANCEL</button>
       <button type="submit" class="button save">SAVE</button>

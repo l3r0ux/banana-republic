@@ -1,26 +1,18 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-
 interface IProps {
   type: string
   label: string
+  inputValue: string
   placeholder?: string
   chips?: { name: string; iconUrl: string }[]
 }
 
-const props = defineProps<IProps>()
+defineProps<IProps>()
 const emit = defineEmits(['change'])
 
-let activeChip = ref<string>()
-
 const handleChipClick = (chip: string) => {
-  activeChip.value = chip
   emit('change', chip)
 }
-
-onMounted(() => {
-  if (props.type === 'chip') activeChip.value = props.chips[0].name
-})
 </script>
 
 <template>
@@ -34,6 +26,7 @@ onMounted(() => {
         :type="type"
         :placeholder="placeholder"
         :name="label"
+        :value="inputValue"
       />
     </div>
     <template v-else>
@@ -44,9 +37,9 @@ onMounted(() => {
           v-for="chip of chips"
           :key="chip"
         >
-          <div class="chip" :class="activeChip === chip.name ? 'selected' : ''">
+          <div class="chip" :class="inputValue === chip.name ? 'selected' : ''">
             <img
-              :src="activeChip === chip.name ? `${chip.iconUrl}--white.svg` : `${chip.iconUrl}.svg`"
+              :src="inputValue === chip.name ? `${chip.iconUrl}--white.svg` : `${chip.iconUrl}.svg`"
             />
           </div>
           <span class="name">{{ chip.name }}</span>
