@@ -106,7 +106,7 @@ const handleChipClick = (chip: string) => {
 
   input {
     height: 3rem;
-    border: 1px solid var(--br-color-cloudy-blue);
+    border: 1px solid var(--br-color-pale-grey);
     border-radius: 4px;
     background-color: var(--br-color-pale-grey);
     padding: 0 1rem;
@@ -115,7 +115,7 @@ const handleChipClick = (chip: string) => {
     transition: border-color 200ms ease;
 
     &:focus {
-      border-color: var(--br-color-blue-green);
+      border-color: var(--br-color-cloudy-blue);
     }
 
     &::placeholder {
