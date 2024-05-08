@@ -115,7 +115,7 @@ const handleChipClick = (chip: string) => {
     transition: border-color 200ms ease;
 
     &:focus {
-      border-color: var(--br-color-tangerine);
+      border-color: var(--br-color-blue-green);
     }
 
     &::placeholder {
