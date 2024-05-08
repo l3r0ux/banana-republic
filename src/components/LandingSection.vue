@@ -1,9 +1,11 @@
 <script setup lang="ts">
 const emit = defineEmits(['expand-content'])
 
-defineProps({
-  isContentExpanded: String
-})
+interface IProps {
+  isContentExpanded: boolean
+}
+
+defineProps<IProps>()
 
 const handleClick = () => {
   emit('expand-content')
