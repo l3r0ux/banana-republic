@@ -154,12 +154,12 @@ const handleChipClick = (chip: string) => {
         transition: background-color 200ms ease;
 
         &.selected {
-          background-color: var(--br-color-light-grey);
+          background-color: var(--br-color-cloudy-darker-blue);
         }
       }
 
       .name {
-        color: var(--br-color-cloudy-blue);
+        color: var(--br-color-cloudy-darker-blue);
       }
     }
   }
