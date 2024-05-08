@@ -1,16 +1,15 @@
 :root {
-  --br-yellow: #ffd300;
-  --br-tangerine: #ff9200;
-  --br-cloudy-blue: #cad7dd;
-  --br-blue-green: #49c8a8;
-  --br-pale-grey: #f5f8f9;
-  --br-charcoal-grey: #373d40;
-  --br-color-text: #434343;
+  --br-color-yellow: #ffd300;
+  --br-color-tangerine: #ff9200;
+  --br-color-cloudy-blue: #cad7dd;
+  --br-color-blue-green: #49c8a8;
+  --br-color-pale-grey: #f5f8f9;
+  --br-color-charcoal-grey: #373d40;
 }
 
 /* semantic color variables for this project */
 :root {
-  --color-text: var(--br-color-text);
+  --color-text: var(--br-color-charcoal-grey);
 }
 
 *,
