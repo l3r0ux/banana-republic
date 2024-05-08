@@ -17,14 +17,14 @@ const formValue = {
   membership: 'Classic'
 }
 
-const handleSubmit = (_event: Event) => {
+const handleSubmit = () => {
   console.log(formValue)
 }
 </script>
 
 <template>
   <section class="form-section">
-    <form @submit.prevent="handleSubmit($event)" class="form">
+    <form @submit.prevent="handleSubmit" class="form">
       <UiInput
         @change="formValue.name = $event"
         label="Name"
@@ -69,6 +69,8 @@ const handleSubmit = (_event: Event) => {
           { name: 'Gold', iconUrl: '/card.svg' }
         ]"
       />
+      <button class="button cancel">CANCEL</button>
+      <button class="button save">SAVE</button>
     </form>
   </section>
 </template>
@@ -88,6 +90,26 @@ const handleSubmit = (_event: Event) => {
     align-items: center;
     justify-content: center;
     padding: 0 1rem;
+    margin-bottom: 1rem;
+
+    .button {
+      width: 100%;
+      border: unset;
+      background-color: unset;
+      font-size: 1.1rem;
+      border-radius: 0.4rem;
+      padding: 1rem 0;
+
+      &.cancel {
+        margin-bottom: 0.5rem;
+        background-color: var(--br-color-pale-grey);
+      }
+
+      &.save {
+        background-color: var(--br-color-blue-green);
+        color: white;
+      }
+    }
   }
 }
 </style>
