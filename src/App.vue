@@ -29,7 +29,7 @@ const handleContentExpand = () => {
 </template>
 
 <style scoped lang="scss">
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 60rem) {
   .main-content {
     display: flex;
 

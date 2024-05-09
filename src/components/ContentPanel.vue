@@ -67,7 +67,7 @@ defineProps<IProps>()
   }
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 60rem) {
   .content-panel-container {
     top: 0;
     left: -100%;

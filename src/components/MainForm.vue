@@ -148,7 +148,7 @@ const handleSubmit = () => {
   }
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 60rem) {
   .form-section {
     padding-top: 6rem;
 

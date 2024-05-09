@@ -169,7 +169,7 @@ const handleInput = (event: Event) => {
   }
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 60rem) {
   .input-container {
     flex-direction: row;
     align-items: center;
