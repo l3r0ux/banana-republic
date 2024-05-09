@@ -79,8 +79,10 @@ defineProps<IProps>()
     }
 
     .inner-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       max-width: 650px;
-      padding-top: 8rem;
     }
   }
 }

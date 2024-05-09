@@ -111,6 +111,7 @@ const handleSubmit = () => {
   background-color: #fff;
   padding-top: 3rem;
   width: 100%;
+  min-height: 100vh;
 
   .form {
     display: flex;

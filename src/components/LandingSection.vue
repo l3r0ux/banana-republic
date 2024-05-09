@@ -32,14 +32,17 @@ const handleClick = () => {
   position: relative;
   z-index: 3;
   display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
   background-color: var(--br-color-yellow);
   padding: 0 3rem;
 
   .inner-container {
+    max-height: 700px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 100%;
     max-width: 280px;
@@ -47,12 +50,13 @@ const handleClick = () => {
 
     > img {
       object-fit: cover;
-      margin-bottom: 6rem;
       width: 100%;
+      margin-top: 1rem;
     }
 
     .text {
       text-align: center;
+      margin-bottom: 1rem;
 
       h1 {
         font-weight: bold;
@@ -99,6 +103,7 @@ const handleClick = () => {
 
     .inner-container {
       max-width: 360px;
+      max-height: 650px;
 
       > img {
         max-width: 236px;
