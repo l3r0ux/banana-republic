@@ -142,4 +142,31 @@ const handleClick = () => {
     align-items: center;
   }
 }
+
+@media screen and (max-height: 612px) and (max-width: 960px) {
+  .landing-section {
+    .inner-container {
+      flex-direction: row;
+      margin: unset;
+      justify-content: center;
+      gap: 2rem;
+      max-width: unset;
+
+      > img {
+        margin: 0;
+        max-width: 14rem;
+      }
+
+      .text {
+        h1 {
+          margin-bottom: 1rem;
+        }
+
+        p {
+          padding-bottom: 2rem;
+        }
+      }
+    }
+  }
+}
 </style>
