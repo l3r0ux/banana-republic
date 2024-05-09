@@ -47,7 +47,7 @@ defineProps<IProps>()
   }
 
   .inner-container {
-    overflow: scroll;
+    overflow-y: auto;
     line-height: 1.6;
     height: 100%;
     width: 100%;
