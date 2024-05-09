@@ -51,7 +51,7 @@ defineProps<IProps>()
     height: 100%;
     width: 100%;
     padding: 3rem 2rem;
-    max-width: 360px;
+    max-width: 22.5rem;
     margin: 0 auto;
 
     h1 {
@@ -81,8 +81,8 @@ defineProps<IProps>()
       display: flex;
       flex-direction: column;
       justify-content: center;
-      max-width: 650px;
-      max-height: 650px;
+      max-width: 40.625rem;
+      max-height: 40.625rem;
       height: 100vh;
     }
   }

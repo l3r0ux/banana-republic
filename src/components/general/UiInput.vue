@@ -77,7 +77,7 @@ const handleInput = (event: Event) => {
       width: 100%;
       height: 3rem;
       border: 1px solid var(--br-color-pale-grey);
-      border-radius: 4px;
+      border-radius: 0.0625rem;
       background-color: var(--br-color-pale-grey);
       padding: 0 1rem;
       font-size: 1rem;
@@ -118,8 +118,8 @@ const handleInput = (event: Event) => {
 
       img {
         position: absolute;
-        right: 18px;
-        top: 14px;
+        right: 1.125rem;
+        top: 0.9rem;
         pointer-events: none;
         background-color: var(--br-color-pale-grey);
       }

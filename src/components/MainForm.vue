@@ -119,7 +119,7 @@ const handleSubmit = () => {
     align-items: center;
     justify-content: center;
     padding: 0 1rem 1rem 1rem;
-    max-width: 360px;
+    max-width: 22.5rem;
     margin: 0 auto;
 
     .form-controls {
@@ -153,7 +153,7 @@ const handleSubmit = () => {
     padding-top: 6rem;
 
     .form {
-      max-width: 664px;
+      max-width: 41.5rem;
       width: 100%;
       padding: 0 4rem;
       .membership-input {
@@ -173,7 +173,7 @@ const handleSubmit = () => {
         .button {
           width: unset;
           padding: 1rem;
-          min-width: 148px;
+          min-width: 9.25rem;
           font-size: 1rem;
           font-weight: 500;
 

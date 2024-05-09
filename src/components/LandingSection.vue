@@ -39,13 +39,13 @@ const handleClick = () => {
   padding: 0 3rem;
 
   .inner-container {
-    max-height: 700px;
+    max-height: 43.75rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    max-width: 280px;
+    max-width: 17.5rem;
     margin: 0 auto;
 
     > img {
@@ -104,12 +104,12 @@ const handleClick = () => {
     align-items: flex-start;
 
     .inner-container {
-      max-width: 360px;
-      max-height: 650px;
+      max-width: 22.5rem;
+      max-height: 40.625rem;
       height: 100vh;
 
       > img {
-        max-width: 236px;
+        max-width: 14.75rem;
       }
 
       .text {
