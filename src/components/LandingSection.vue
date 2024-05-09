@@ -137,13 +137,13 @@ const handleClick = () => {
   }
 }
 
-@media screen and (min-height: 46,25rem) {
+@media screen and (min-height: 46.25rem) {
   .landing-section {
     align-items: center;
   }
 }
 
-@media screen and (max-height: 38,25rem) and (max-width: 60rem) {
+@media screen and (max-height: 38.25rem) and (max-width: 60rem) {
   .landing-section {
     .inner-container {
       flex-direction: row;
