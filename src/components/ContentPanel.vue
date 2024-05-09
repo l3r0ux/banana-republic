@@ -72,7 +72,6 @@ defineProps<IProps>()
     top: 0;
     left: -100%;
     transition: left 600ms ease;
-    height: 100vh;
 
     &.expanded {
       left: 0;
@@ -83,6 +82,8 @@ defineProps<IProps>()
       flex-direction: column;
       justify-content: center;
       max-width: 650px;
+      max-height: 650px;
+      height: 100vh;
     }
   }
 }

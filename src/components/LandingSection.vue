@@ -100,10 +100,13 @@ const handleClick = () => {
 @media screen and (min-width: 960px) {
   .landing-section {
     width: fit-content;
+    height: unset;
+    align-items: flex-start;
 
     .inner-container {
       max-width: 360px;
       max-height: 650px;
+      height: 100vh;
 
       > img {
         max-width: 236px;
@@ -131,6 +134,12 @@ const handleClick = () => {
         }
       }
     }
+  }
+}
+
+@media screen and (min-height: 740px) {
+  .landing-section {
+    align-items: center;
   }
 }
 </style>

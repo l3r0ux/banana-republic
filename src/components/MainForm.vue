@@ -168,6 +168,7 @@ const handleSubmit = () => {
         justify-content: flex-end;
         gap: 1rem;
         margin-top: 3rem;
+        margin-bottom: 1rem;
 
         .button {
           width: unset;
