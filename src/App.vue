@@ -9,7 +9,7 @@ let isContentExpanded = ref(false)
 const handleContentExpand = () => {
   isContentExpanded.value = !isContentExpanded.value
 
-  if (isContentExpanded.value)
+  if (isContentExpanded.value && window.innerWidth <= 960)
     window.scrollTo({
       behavior: 'smooth',
       top: window.innerHeight
@@ -18,6 +18,28 @@ const handleContentExpand = () => {
 </script>
 
 <template>
-  <LandingSection :isContentExpanded="isContentExpanded" @expand-content="handleContentExpand" />
-  <MainForm :isContentExpanded="isContentExpanded" />
+  <div class="main-content">
+    <LandingSection
+      class="landing-section"
+      :isContentExpanded="isContentExpanded"
+      @expand-content="handleContentExpand"
+    />
+    <MainForm class="main-form" :isContentExpanded="isContentExpanded" />
+  </div>
 </template>
+
+<style scoped lang="scss">
+@media screen and (min-width: 960px) {
+  .main-content {
+    display: flex;
+
+    .landing-section {
+      flex: 3;
+    }
+
+    .main-form {
+      flex: 5;
+    }
+  }
+}
+</style>

@@ -40,6 +40,7 @@ const handleClick = () => {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 100%;
     max-width: 280px;
     margin: 0 auto;
@@ -77,7 +78,7 @@ const handleClick = () => {
         border: unset;
 
         img {
-          transition: 200ms transform ease;
+          transition: 600ms transform ease;
 
           &.closed {
             transform: rotate(90deg);
@@ -85,6 +86,42 @@ const handleClick = () => {
 
           &.expanded {
             transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .landing-section {
+    width: fit-content;
+
+    .inner-container {
+      max-width: 360px;
+
+      > img {
+        max-width: 236px;
+      }
+
+      .text {
+        h1 {
+          margin-bottom: 1rem;
+        }
+
+        p {
+          padding-bottom: 5rem;
+        }
+
+        button {
+          img {
+            &.closed {
+              transform: rotate(0deg);
+            }
+
+            &.expanded {
+              transform: rotate(180deg);
+            }
           }
         }
       }

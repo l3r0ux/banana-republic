@@ -13,6 +13,10 @@ const emit = defineEmits(['change'])
 const handleChipClick = (chip: string) => {
   emit('change', chip)
 }
+
+const handleInput = (event: Event) => {
+  emit('change', (event.target as HTMLInputElement).value)
+}
 </script>
 
 <template>
@@ -21,7 +25,7 @@ const handleChipClick = (chip: string) => {
     <div class="input-wrapper" v-if="type !== 'chip'">
       <img v-if="type === 'date'" src="/calendar.svg" />
       <input
-        @input="emit('change', $event.target.value)"
+        @input="handleInput"
         :id="label"
         :type="type"
         :placeholder="placeholder"
@@ -35,7 +39,7 @@ const handleChipClick = (chip: string) => {
           @click.prevent="handleChipClick(chip.name)"
           class="chip-container"
           v-for="chip of chips"
-          :key="chip"
+          :key="chip.name"
         >
           <div class="chip" :class="inputValue === chip.name ? 'selected' : ''">
             <img
@@ -59,9 +63,43 @@ const handleChipClick = (chip: string) => {
   text-align: left;
   margin-bottom: 1rem;
 
+  label {
+    padding-bottom: 0.4rem;
+    font-weight: 500;
+    width: 100%;
+  }
+
   .input-wrapper {
     position: relative;
     width: 100%;
+
+    input {
+      width: 100%;
+      height: 3rem;
+      border: 1px solid var(--br-color-pale-grey);
+      border-radius: 4px;
+      background-color: var(--br-color-pale-grey);
+      padding: 0 1rem;
+      font-size: 1rem;
+      outline: none;
+      transition:
+        border-color 200ms ease,
+        background-color 200ms ease;
+
+      &:focus {
+        border-color: var(--br-color-cloudy-blue);
+        background-color: #fff;
+      }
+
+      &::placeholder {
+        color: var(--br-color-cloudy-blue);
+        opacity: 1;
+      }
+
+      &::-ms-input-placeholder {
+        color: var(--br-color-cloudy-blue);
+      }
+    }
 
     @supports selector(::-webkit-calendar-picker-indicator) {
       input[type='date']::-webkit-calendar-picker-indicator {
@@ -91,40 +129,6 @@ const handleChipClick = (chip: string) => {
       img {
         display: none;
       }
-    }
-  }
-
-  label,
-  input {
-    width: 100%;
-  }
-
-  label {
-    padding-bottom: 0.4rem;
-    font-weight: 500;
-  }
-
-  input {
-    height: 3rem;
-    border: 1px solid var(--br-color-pale-grey);
-    border-radius: 4px;
-    background-color: var(--br-color-pale-grey);
-    padding: 0 1rem;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 200ms ease;
-
-    &:focus {
-      border-color: var(--br-color-cloudy-blue);
-    }
-
-    &::placeholder {
-      color: var(--br-color-cloudy-blue);
-      opacity: 1;
-    }
-
-    &::-ms-input-placeholder {
-      color: var(--br-color-cloudy-blue);
     }
   }
 
@@ -161,6 +165,29 @@ const handleChipClick = (chip: string) => {
       .name {
         color: var(--br-color-cloudy-darker-blue);
       }
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .input-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 1.5rem;
+
+    label {
+      flex: 2;
+    }
+
+    .input-wrapper,
+    .chips-container {
+      flex: 5;
+    }
+
+    .chips-container {
+      grid-template-columns: repeat(3, auto);
+      margin-top: 0;
     }
   }
 }

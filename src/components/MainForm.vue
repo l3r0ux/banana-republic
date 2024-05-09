@@ -82,6 +82,7 @@ const handleSubmit = () => {
         :input-value="formValue.customerId"
       />
       <UiInput
+        class="membership-input"
         @change="formValue.membership = $event"
         label="Membership"
         type="chip"
@@ -92,8 +93,10 @@ const handleSubmit = () => {
         ]"
         :input-value="formValue.membership"
       />
-      <button @click.prevent="clearForm" class="button cancel">CANCEL</button>
-      <button type="submit" class="button save">SAVE</button>
+      <div class="form-controls">
+        <button @click.prevent="clearForm" class="button cancel">CANCEL</button>
+        <button type="submit" class="button save">SAVE</button>
+      </div>
     </form>
     <ContentPanel :isContentExpanded="isContentExpanded" />
   </section>
@@ -118,23 +121,64 @@ const handleSubmit = () => {
     max-width: 360px;
     margin: 0 auto;
 
-    .button {
+    .form-controls {
       width: 100%;
-      border: unset;
-      background-color: unset;
-      font-size: 1.1rem;
-      border-radius: 0.4rem;
-      padding: 1rem 0;
-      cursor: pointer;
 
-      &.cancel {
-        margin-bottom: 0.5rem;
-        background-color: var(--br-color-pale-grey);
+      .button {
+        width: 100%;
+        border: unset;
+        background-color: unset;
+        font-size: 1.1rem;
+        border-radius: 0.4rem;
+        padding: 1rem 0;
+        cursor: pointer;
+
+        &.cancel {
+          margin-bottom: 0.5rem;
+          background-color: var(--br-color-pale-grey);
+        }
+
+        &.save {
+          background-color: var(--br-color-blue-green);
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .form-section {
+    padding-top: 6rem;
+
+    .form {
+      max-width: 664px;
+      width: 100%;
+      padding: 0 4rem;
+      .membership-input {
+        margin-top: 2rem;
       }
 
-      &.save {
-        background-color: var(--br-color-blue-green);
-        color: white;
+      .form-controls {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1rem;
+        margin-top: 3rem;
+
+        .button {
+          width: unset;
+          padding: 1rem;
+          min-width: 148px;
+          font-size: 1rem;
+          font-weight: 500;
+
+          &.cancel {
+            margin-bottom: unset;
+          }
+        }
       }
     }
   }

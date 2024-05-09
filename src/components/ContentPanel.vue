@@ -11,15 +11,21 @@ defineProps<IProps>()
     <aside class="inner-container">
       <h1>My World Today</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, itaque illum soluta quasi
-        accusamus provident cum asperiores cumque aspernatur, aliquid sit! Laborum reprehenderit ab
-        doloremque facere aspernatur nesciunt voluptate quam autem quas in deserunt, eligendi,
-        voluptatem, ad corporis possimus non consectetur qui delectus laudantium cum. Libero dolorum
-        maiores excepturi dignissimos et non quisquam, quod labore perferendis ipsam quia quam
-        similique architecto. Inventore blanditiis optio aperiam dolor, animi accusantium natus,
-        consequatur dolorem exercitationem, commodi incidunt molestiae ullam provident facere
-        nesciunt. Ratione debitis quisquam aliquam, ullam voluptatibus praesentium aspernatur nam
-        dolorem adipisci. Ullam eveniet officiis consectetur et cum enim voluptate dolor ex.
+        <span>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, itaque illum soluta
+          quasi accusamus provident cum asperiores cumque aspernatur, aliquid sit! Laborum
+          reprehenderit ab doloremque.
+        </span>
+        <a href="#">View all days&nbsp;</a>
+        <span>
+          nesciunt voluptate quam autem quas in deserunt, eligendi, voluptatem, ad corporis possimus
+          non consectetur qui delectus laudantium cum. Libero dolorum maiores excepturi dignissimos
+          et non quisquam, quod labore perferendis ipsam quia quam similique architecto. Inventore
+          blanditiis optio aperiam dolor, animi accusantium natus, consequatur dolorem
+          exercitationem, commodi incidunt molestiae ullam provident facere nesciunt. Ratione
+          debitis quisquam aliquam, ullam voluptatibus praesentium aspernatur nam dolorem adipisci.
+          Ullam eveniet officiis consectetur et cum enim voluptate dolor ex.
+        </span>
       </p>
     </aside>
   </div>
@@ -57,6 +63,24 @@ defineProps<IProps>()
     p {
       font-weight: 500;
       font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .content-panel-container {
+    top: 0;
+    left: -100%;
+    transition: left 600ms ease;
+    height: 100vh;
+
+    &.expanded {
+      left: 0;
+    }
+
+    .inner-container {
+      max-width: 650px;
+      padding-top: 8rem;
     }
   }
 }
