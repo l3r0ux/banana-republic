@@ -107,16 +107,16 @@ const handleSubmit = () => {
   flex-direction: column;
   background-color: #fff;
   padding-top: 3rem;
-  max-width: 360px;
-  margin: 0 auto;
+  width: 100%;
 
   .form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 1rem;
-    margin-bottom: 1rem;
+    padding: 0 1rem 1rem 1rem;
+    max-width: 360px;
+    margin: 0 auto;
 
     .button {
       width: 100%;
